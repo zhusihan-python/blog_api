@@ -1,0 +1,25 @@
+INSERT INTO `blogapi`.`user`(`id`, `username`, `password`) VALUES (1, 'xiaozhu', 'pass123');
+INSERT INTO `blogapi`.`user`(`id`, `username`, `password`) VALUES (2, 'admin', 'admin123');
+INSERT INTO `blogapi`.`user`(`id`, `username`, `password`) VALUES (3, 'xiaowang', 'pass123');
+
+INSERT INTO `blogapi`.`role`(`id`, `rolename`, `description`) VALUES (1, 'admin', '管理员');
+INSERT INTO `blogapi`.`role`(`id`, `rolename`, `description`) VALUES (2, 'user', '普通用户');
+
+INSERT INTO `blogapi`.`role_users`(`user_id`, `role_id`) VALUES (1, 2);
+INSERT INTO `blogapi`.`role_users`(`user_id`, `role_id`) VALUES (2, 1);
+INSERT INTO `blogapi`.`role_users`(`user_id`, `role_id`) VALUES (3, 2);
+
+INSERT INTO `blogapi`.`post`(`id`, `title`, `text`, `publish_date`, `user_id`) VALUES (1, '001', '123', '2017-11-15 23:42:42', 1);
+INSERT INTO `blogapi`.`post`(`id`, `title`, `text`, `publish_date`, `user_id`) VALUES (2, '002', '222', '2017-11-15 23:43:42', 1);
+INSERT INTO `blogapi`.`post`(`id`, `title`, `text`, `publish_date`, `user_id`) VALUES (3, '003', '333', '2017-11-15 23:46:42', 1);
+INSERT INTO `blogapi`.`post`(`id`, `title`, `text`, `publish_date`, `user_id`) VALUES (4, '004', '444', '2017-11-15 23:47:42', 1);
+INSERT INTO `blogapi`.`post`(`id`, `title`, `text`, `publish_date`, `user_id`) VALUES (5, '005', '555', '2017-11-15 23:48:42', 1);
+INSERT INTO `blogapi`.`post`(`id`, `title`, `text`, `publish_date`, `user_id`) VALUES (6, '006', '666', '2017-11-15 23:49:42', 1);
+INSERT INTO `blogapi`.`post`(`id`, `title`, `text`, `publish_date`, `user_id`) VALUES (7, '007', '777', '2017-11-15 23:50:42', 1);
+INSERT INTO `blogapi`.`post`(`id`, `title`, `text`, `publish_date`, `user_id`) VALUES (8, '008', '888', '2017-11-15 23:51:42', 1);
+INSERT INTO `blogapi`.`post`(`id`, `title`, `text`, `publish_date`, `user_id`) VALUES (9, '009', '999', '2017-11-15 23:52:42', 1);
+INSERT INTO `blogapi`.`post`(`id`, `title`, `text`, `publish_date`, `user_id`) VALUES (10, '010', 'asd', '2017-11-15 23:53:42', 1);
+INSERT INTO `blogapi`.`post`(`id`, `title`, `text`, `publish_date`, `user_id`) VALUES (11, '011', 'xzcz', '2017-11-15 23:54:42', 1);
+INSERT INTO `blogapi`.`post`(`id`, `title`, `text`, `publish_date`, `user_id`) VALUES (12, '012', 'fdg', '2017-11-15 23:55:42', 1);
+INSERT INTO `blogapi`.`post`(`id`, `title`, `text`, `publish_date`, `user_id`) VALUES (13, '013', 'hjhgj', '2017-11-15 23:56:42', 1);
+INSERT INTO `blogapi`.`post`(`id`, `title`, `text`, `publish_date`, `user_id`) VALUES (14, '014', 'thgtrg', '2017-11-15 23:57:42', 1);
