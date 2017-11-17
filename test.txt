@@ -1,0 +1,21 @@
+#测试能否返回所有文章
+curl -u xiaozhu:pass123 -i http://localhost:8080/blog/api/v1.0/posts
+#测试能否返回指定文章
+curl -u xiaozhu:pass123 -i http://localhost:8080/blog/api/v1.0/posts/1
+#测试不同用户访问能否返回指定文章
+curl -u xiaowang:pass123 -i http://localhost:8080/blog/api/v1.0/posts/1
+#测试新增文章
+curl -u xiaozhu:pass123 -i -H 'Content-Type: application/json' -X POST -d '{"title":"Read a book","text":"Read a book every night","publish_date":"2017-11-16 21:47:42"}' http://localhost:8080/blog/api/v1.0/add
+#测试其他用户不能修改文章
+curl -u xiaowang:pass123 -i -H 'Content-Type: application/json' -X PUT -d '{"title":"Read many books","text":"Read many books every night","publish_date":"2017-11-16 23:47:42"}' http://localhost:8080/blog/api/v1.0/posts/15
+#测试作者修改文章成功
+curl -u xiaozhu:pass123 -i -H 'Content-Type: application/json' -X PUT -d '{"title":"Read many books","text":"Read many books every night","publish_date":"2017-11-16 23:47:42"}' http://localhost:8080/blog/api/v1.0/posts/15
+#测试管理员修改普通用户文章成功
+curl -u admin:admin123 -i -H 'Content-Type: application/json' -X PUT -d '{"title":"Read a book","text":"Read a book every night","publish_date":"2017-11-17 23:47:42"}' http://localhost:8080/blog/api/v1.0/posts/15
+#测试其他用户不能删除文章
+curl -u xiaowang:pass123 -i -H 'Content-Type: application/json' -X DELETE http://localhost:8080/blog/api/v1.0/posts/15
+#测试作者删除文章成功
+curl -u xiaozhu:pass123 -i -H 'Content-Type: application/json' -X DELETE http://localhost:8080/blog/api/v1.0/posts/15
+#测试管理员删除文章成功
+curl -u xiaozhu:pass123 -i -H 'Content-Type: application/json' -X POST -d '{"title":"Read a book","text":"Read a book every night","publish_date":"2017-11-16 21:47:42"}' http://localhost:8080/blog/api/v1.0/add
+curl -u admin:admin123 -i -H 'Content-Type: application/json' -X DELETE http://localhost:8080/blog/api/v1.0/posts/16
